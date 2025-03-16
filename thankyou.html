@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You - Shopii</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background-color: #fc5831;
+            color: white;
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            justify-content: space-between;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        header img {
+            height: 50px;
+            margin-right: 10px;
+        }
+
+        header .title {
+            font-size: 1.5em;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        header .search-bar {
+            display: flex;
+            align-items: center;
+            width: 30%;
+        }
+
+        header .search-bar input {
+            width: 85%;
+            padding: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        header .search-bar button {
+            background-color: white;
+            border: none;
+            color: #fc5831;
+            padding: 6px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        header .login-buttons {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+        }
+
+        main {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        main h2 {
+            color: #333;
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+
+        main p {
+            color: #555;
+            font-size: 1.2em;
+            margin-bottom: 20px;
+        }
+
+        main button {
+            background-color: #fc5831;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1em;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        main button:hover {
+            background-color: #e04d28;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #fc5831;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div onclick="home()">
+        <img src="assets stuff/logo_shopii.png" alt="Logo">
+        <span class="title">Shopii</span>
+    </div>
+    <div class="search-bar">
+        <input type="text" id="search-query" placeholder="Search...">
+        <button onclick="search()">Search</button>
+    </div>
+    <div class="login-buttons">
+        <div class="cart" onclick="goToCart()"><img src="assets stuff/logo_shopii_cart.png" alt="cart"></div>
+    </div>
+</header>
+
+<main>
+    <div>
+        <h2>Thank you for using Shopii!</h2>
+        <p>Please enjoy shopping <3</p>
+        <button onclick="returnHome()">Return Home</button>
+    </div>
+</main>
+
+<footer>
+    Enjoy shopping with Shopii!
+</footer>
+
+<script>
+    function returnHome() {
+        window.location.href = 'index.html';
+    }
+
+    function search() {
+        const query = document.getElementById('search-query').value.toLowerCase();
+        window.location.href = `search.html?q=${encodeURIComponent(query)}`;
+    }
+
+    function goToCart() {
+        window.location.href = 'shopping-cart.html';
+    }
+</script>
+</body>
+</html>
